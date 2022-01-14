@@ -7,25 +7,18 @@ module.exports = {
 	],
 	theme: {
 		colors: {
-			dark: "#00282a",
-			light: "#f4eceb",
+			dark: "#333333",
+			light: "#fff4e8",
+			orange: "#d95c15",
+			green: "#4f9a93",
 		},
 		container: {
 			padding: {
-				DEFAULT: "1.5rem",
+				DEFAULT: "1.25rem",
 				sm: "3rem",
 				lg: "4vw",
 			},
 			center: true,
-		},
-		fontSize: {
-			xs: ["0.75rem", { lineHeight: "1.5" }],
-			sm: ["0.9375rem", { lineHeight: "1.5" }],
-			base: ["1.125rem", { lineHeight: "1.6" }],
-			lg: ["1.375rem", { lineHeight: "1.6" }],
-			xl: ["1.125rem", { lineHeight: "1.6" }],
-			"2xl": ["1.375rem", { lineHeight: "1.25" }],
-			"3xl": ["2.4rem", { lineHeight: "1" }],
 		},
 		screens: {
 			sm: "640px",

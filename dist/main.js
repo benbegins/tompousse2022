@@ -524,7 +524,6 @@ var _styleScss = require("../scss/style.scss");
 var _appVue = require("./App.vue");
 var _appVueDefault = parcelHelpers.interopDefault(_appVue);
 Vue.createApp(_appVueDefault.default).mount("#page");
-console.log("Hello");
 
 },{"../scss/style.scss":"cPCuP","./App.vue":"2rZPY","@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV"}],"cPCuP":[function() {},{}],"2rZPY":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
@@ -555,8 +554,31 @@ parcelHelpers.defineInteropFlag(exports);
 exports.default = {
     data () {
         return {
-            message: "Hello World"
+            menuActive: false,
+            subMenuActive: false,
+            menuCompact: false
         };
+    },
+    methods: {
+        closeSubMenu () {
+            if (window.innerWidth >= 1024) this.subMenuActive = false;
+        },
+        menu () {
+            window.addEventListener("scroll", (e)=>{
+                if (window.scrollY > 100) this.menuCompact = true;
+                else this.menuCompact = false;
+            });
+        }
+    },
+    mounted () {
+        this.menu();
+    },
+    watch: {
+        menuActive: function(val) {
+            const body = document.querySelector('body');
+            if (val == true) body.classList.add('overflow-hidden');
+            else body.classList.remove('overflow-hidden');
+        }
     }
 };
 

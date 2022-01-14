@@ -1,7 +1,8 @@
 <?php get_header(); ?>
 
-    <div class="index">
-        <p class="bg-light text-dark">Message : {{ message }}</p>
+    <div class="index page-container">
+        
+
     </div>
 
 <?php get_footer(); ?>

@@ -38,7 +38,7 @@ function nomdutheme_theme_register_assets(){
         true
     );
     wp_enqueue_script( 
-        'app', 
+        'main', 
         get_template_directory_uri() . '/dist/main.js', 
         array('vue'),
         '1.0',
@@ -58,3 +58,6 @@ add_image_size( 'xxl', 1900);
 if( function_exists('acf_add_options_page') ) {
 	acf_add_options_page();
 }
+
+// Custom Post / Taxonomies
+require get_template_directory() . '/inc/custom-post.php';

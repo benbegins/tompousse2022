@@ -1,6 +1,6 @@
 ::selection {
-	background: red;
-	color: white;
+	background: $green;
+	color: $light;
 }
 
 html {
@@ -11,13 +11,16 @@ html {
 }
 
 body {
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-	font-family: sans-serif;
-	font-weight: 400;
-	@apply text-base;
+	@apply bg-light text-dark text-base;
 }
 
 .container {
 	max-width: none;
+}
+
+.page-container {
+	padding-top: 90px;
+	@media screen and (min-width: $lg) {
+		padding-top: 130px;
+	}
 }

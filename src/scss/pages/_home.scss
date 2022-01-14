@@ -1,0 +1,99 @@
+.home {
+	// HERO
+	.hero {
+		&__container {
+			background: #fce8d7;
+
+			@media screen and (min-width: $md) {
+				padding: 0 var(--page-padding);
+			}
+
+			@media screen and (min-width: $lg) {
+				margin: 0 var(--page-padding);
+				padding: 0 0 0 var(--page-padding);
+
+				display: grid;
+				grid-template-columns: repeat(2, 1fr);
+				align-items: end;
+
+				border-radius: 20px;
+				overflow: hidden;
+			}
+		}
+
+		// Left
+		.left {
+			padding: 4rem var(--page-padding);
+
+			@media screen and (min-width: $md) {
+				padding: 8rem 0;
+			}
+
+			@media screen and (min-width: $lg) {
+				padding: 8vw 0;
+			}
+
+			.page-title {
+				font-size: 3.44rem;
+				font-size: max(1.88rem, 1.51rem + 1.84vw);
+
+				span.text-xl {
+					font-size: 1.75rem;
+					font-size: max(1.25rem, 1.13rem + 0.59vw);
+				}
+			}
+
+			form {
+				margin-top: 2rem;
+				border: 2px solid $green;
+				border-radius: 20px;
+				overflow: hidden;
+				display: flex;
+
+				@media screen and (min-width: $lg) {
+					max-width: 500px;
+				}
+
+				input {
+					&[type="text"] {
+						width: calc(100% - 75px);
+						background: none;
+						padding: 1.3rem 1rem;
+						outline: 0;
+
+						&::placeholder {
+							color: $dark;
+						}
+					}
+					&[type="submit"] {
+						width: 75px;
+						text-indent: -9999px;
+						background: $green url("/src/img/icon-search-light.svg")
+							center center no-repeat;
+						cursor: pointer;
+						transition: background 0.2s;
+
+						&:hover {
+							background-color: $orange;
+						}
+					}
+				}
+			}
+		}
+
+		// Right
+		.right {
+			@media screen and (min-width: $md) {
+				display: none;
+			}
+			@media screen and (min-width: $lg) {
+				display: block;
+				padding-left: var(--page-padding);
+			}
+
+			img {
+				width: 100%;
+			}
+		}
+	}
+}

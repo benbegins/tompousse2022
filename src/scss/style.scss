@@ -4,5 +4,13 @@
 
 //Abstracts
 @import "./abstracts/variables";
+@import "./abstracts/fonts";
 @import "./abstracts/global";
 @import "./abstracts/spacing";
+@import "./abstracts/text";
+
+//Components
+@import "./components/header";
+
+// Pages
+@import "./pages/home";

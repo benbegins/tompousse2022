@@ -1,0 +1,64 @@
+// Poppins Black 900
+// Nunito Sans 400 / 700 / 800
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700;800&family=Poppins:wght@900&display=swap");
+
+$nunito: "Nunito Sans", sans-serif;
+$poppins: "Poppins", sans-serif;
+
+body {
+	font-family: "Nunito Sans", sans-serif;
+	font-weight: 400;
+	line-height: 1.6;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+// TEXT SM
+@mixin text-sm {
+	font-size: 0.9375rem;
+	font-size: clamp(0.81rem, 0.78rem + 0.15vw, 0.94rem);
+	line-height: 1.6;
+}
+.text-sm {
+	@include text-sm;
+}
+
+// TEXT BASE
+@mixin text-base {
+	font-size: 1.125rem;
+	font-size: clamp(0.94rem, 0.89rem + 0.22vw, 1.13rem);
+	line-height: 1.6;
+}
+.text-base {
+	@include text-base;
+}
+
+// TEXT LG
+@mixin text-lg {
+	font-size: 1.625rem;
+	font-size: clamp(1.13rem, 1.02rem + 0.51vw, 1.56rem);
+	line-height: 1.6;
+}
+.text-lg {
+	@include text-lg;
+}
+
+// TEXT XL
+@mixin text-xl {
+	font-size: 2.125rem;
+	font-size: clamp(1.63rem, 1.49rem + 0.66vw, 2.19rem);
+	line-height: 1.6;
+}
+.text-xl {
+	@include text-xl;
+}
+
+// TEXT 2XL
+@mixin text-2xl {
+	font-size: 4.375rem;
+	font-size: max(2.19rem, 1.67rem + 2.57vw);
+	line-height: 1.2;
+}
+.text-2xl {
+	@include text-2xl;
+}

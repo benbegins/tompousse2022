@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="16" height="16" viewBox="0 0 16 16">
+  <defs>
+    <clipPath id="clip-path">
+      <rect width="16" height="16" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="linkedin" clip-path="url(#clip-path)">
+    <g id="linkedin-2" data-name="linkedin" transform="translate(0 0)">
+      <path id="Tracé_4" data-name="Tracé 4" d="M18.826,18.525h0V12.656c0-2.871-.618-5.082-3.974-5.082A3.484,3.484,0,0,0,11.718,9.3h-.047V7.842H8.489V18.524H11.8V13.235c0-1.393.264-2.739,1.989-2.739,1.7,0,1.725,1.589,1.725,2.829v5.2Z" transform="translate(-2.83 -2.525)" fill="#333"/>
+      <path id="Tracé_5" data-name="Tracé 5" d="M.4,7.977H3.713V18.659H.4Z" transform="translate(-0.132 -2.659)" fill="#333"/>
+      <path id="Tracé_6" data-name="Tracé 6" d="M1.921,0A1.93,1.93,0,1,0,3.843,1.921,1.922,1.922,0,0,0,1.921,0Z" fill="#333"/>
+    </g>
+  </g>
+</svg>
