@@ -1,0 +1,70 @@
+.page-contact {
+	.main-section {
+		.container {
+			@media screen and (min-width: $lg) {
+				display: grid;
+				grid-template-columns: repeat(2, 1fr);
+			}
+		}
+
+		.left {
+			@media screen and (min-width: $lg) {
+				padding-right: 20%;
+			}
+			.adress {
+				@media screen and (min-width: $md) {
+					display: flex;
+					justify-content: space-between;
+				}
+			}
+			.map {
+				margin-top: 2rem;
+				.img-container {
+					border-radius: $radius;
+					overflow: hidden;
+				}
+			}
+		}
+
+		.right {
+			margin-top: 4rem;
+
+			@media screen and (min-width: $lg) {
+				margin-top: 0;
+			}
+
+			form {
+				p {
+					margin-bottom: 2rem;
+				}
+				input[type="text"],
+				input[type="email"],
+				textarea {
+					width: 100%;
+					background: $light;
+					border: 2px solid $green;
+					border-radius: $radius;
+					padding: 1.2rem;
+
+					&:focus {
+						background: lighten($light, 2%);
+						outline: none;
+					}
+				}
+
+				textarea {
+					min-height: 250px;
+				}
+
+				label {
+					@include text-sm;
+					font-weight: 800;
+				}
+
+				.btn-primary {
+					min-width: 200px;
+				}
+			}
+		}
+	}
+}

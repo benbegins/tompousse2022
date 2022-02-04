@@ -1,0 +1,48 @@
+.rich-text {
+	p,
+	img {
+		margin: 1.5rem 0;
+		width: 100%;
+
+		&:first-child {
+			margin-top: 0;
+		}
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+	.link-basic {
+		@include text-base;
+	}
+	h2 {
+		@include text-xl;
+		font-weight: 800;
+		font-family: $poppins;
+		line-height: 1.3;
+		margin-top: 4rem;
+	}
+	h3,
+	h4,
+	h5,
+	h6 {
+		@include text-lg;
+		font-weight: 800;
+		font-family: $poppins;
+		margin-top: 1rem;
+		line-height: 1.3;
+	}
+	hr {
+		border-top: $border;
+		margin-top: 6rem;
+		margin-bottom: 2rem;
+	}
+	.content {
+		@media screen and (min-width: $lg) {
+			max-width: 50%;
+			margin: 0 auto;
+		}
+	}
+	strong {
+		font-weight: 800;
+	}
+}

@@ -1,0 +1,213 @@
+.page-thematiques {
+	// INTRO
+	.intro {
+		padding: var(--intro-spacing);
+		text-align: center;
+
+		@media screen and (min-width: $lg) {
+			max-width: 50%;
+			margin: 0 auto;
+		}
+
+		&__description {
+			margin-top: 1rem;
+		}
+	}
+
+	// LIVRES
+	.livres {
+		.container {
+			@media screen and (min-width: $lg) {
+				display: flex;
+			}
+		}
+
+		// Livres
+		&__list-container {
+			// transition pour requête ajax
+			transition: opacity 0.5s;
+
+			@media screen and (min-width: $lg) {
+				flex: 1;
+			}
+		}
+		&__list {
+			display: grid;
+			gap: var(--column-spacing);
+			margin-top: 2rem;
+
+			@media screen and (min-width: $md) {
+				grid-template-columns: repeat(2, 1fr);
+			}
+			@media screen and (min-width: $lg) {
+				margin-top: 0;
+				grid-template-columns: repeat(3, 1fr);
+
+				&.full-size {
+					grid-template-columns: repeat(4, 1fr);
+				}
+
+				.livre-card {
+					height: 26vw;
+				}
+			}
+		}
+
+		// Filtres
+		&__filter {
+			@media screen and (min-width: $lg) {
+				width: 25%;
+				padding-right: 2rem;
+			}
+			@media screen and (min-width: $xxl) {
+				padding-right: 3rem;
+			}
+
+			&-container {
+				position: fixed;
+				z-index: 50;
+				width: 100%;
+				height: 100%;
+				min-height: 100vh;
+				overflow: scroll;
+				top: 0;
+				left: 0;
+				background: $light;
+				padding: 100px var(--page-padding);
+				transform: translateX(100%);
+				transition: transform 0.75s $ease;
+
+				@media screen and (min-width: $lg) {
+					transform: translateX(0);
+					position: static;
+					width: auto;
+					min-height: auto;
+					padding: 0;
+				}
+
+				&.active {
+					transform: translateX(0);
+				}
+
+				.btn-close {
+					position: absolute;
+					right: var(--page-padding);
+					top: 42px;
+					width: 16px;
+					height: 16px;
+					text-indent: -9999px;
+					background: url("/src/img/icon-burger-close.svg") center
+						center no-repeat;
+					background-size: 16px 16px;
+
+					@media screen and (min-width: $lg) {
+						display: none;
+					}
+				}
+			}
+
+			.btn-filtre {
+				font-weight: bold;
+				background: url("/src/img/icon-arrow-right-sm.svg") center right
+					no-repeat;
+				cursor: pointer;
+				padding: 1rem 0;
+				border-top: 2px solid $dark;
+				margin-bottom: 1rem;
+
+				@media screen and (min-width: $lg) {
+					display: none;
+				}
+			}
+
+			.filtres-actifs {
+				&__item {
+					@include text-sm;
+					display: none;
+					background: url("/src/img/icon-delete.svg") center right
+						no-repeat;
+					padding: 0.25rem 15px 0.25rem 0;
+					margin-right: 15px;
+					opacity: 0.75;
+					cursor: pointer;
+
+					&.active {
+						display: inline-block;
+					}
+				}
+
+				@media screen and (min-width: $lg) {
+					display: none;
+				}
+			}
+
+			li {
+				padding-top: 1rem;
+
+				&:first-child {
+					padding-top: 2rem;
+					border-top: 2px solid $dark;
+
+					@media screen and (min-width: $lg) {
+						border-top: $border;
+					}
+				}
+			}
+			/* Customize the label (the container) */
+			.label {
+				display: block;
+				position: relative;
+				padding-left: 35px;
+				cursor: pointer;
+				user-select: none;
+			}
+
+			/* Hide the browser's default checkbox */
+			.label input {
+				position: absolute;
+				opacity: 0;
+				cursor: pointer;
+				height: 0;
+				width: 0;
+			}
+
+			/* Create a custom checkbox */
+			.checkmark {
+				position: absolute;
+				top: 0;
+				left: 0;
+				height: 14px;
+				width: 14px;
+				margin-top: 6px;
+				border: 1px solid $dark;
+				transition: 0.2s;
+			}
+
+			/* On mouse-over, add a grey background color */
+			.label:hover input ~ .checkmark {
+				background-color: #ccc;
+			}
+
+			/* Create the checkmark/indicator (hidden when not checked) */
+			.checkmark:after {
+				content: "";
+				position: absolute;
+				display: none;
+			}
+
+			/* Show the checkmark when checked */
+			.label input:checked ~ .checkmark:after {
+				display: block;
+			}
+
+			/* Style the checkmark/indicator */
+			.label .checkmark:after {
+				width: 10px;
+				height: 10px;
+				left: 1px;
+				top: 1px;
+				background-color: $dark;
+			}
+		}
+	}
+}

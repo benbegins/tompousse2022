@@ -3,6 +3,7 @@
 	.hero {
 		&__container {
 			background: #fce8d7;
+			overflow: hidden;
 
 			@media screen and (min-width: $md) {
 				padding: 0 var(--page-padding);
@@ -36,6 +37,7 @@
 			.page-title {
 				font-size: 3.44rem;
 				font-size: max(1.88rem, 1.51rem + 1.84vw);
+				line-height: 1.2;
 
 				span.text-xl {
 					font-size: 1.75rem;
@@ -43,40 +45,10 @@
 				}
 			}
 
-			form {
+			.form-search {
 				margin-top: 2rem;
-				border: 2px solid $green;
-				border-radius: 20px;
-				overflow: hidden;
-				display: flex;
-
 				@media screen and (min-width: $lg) {
 					max-width: 500px;
-				}
-
-				input {
-					&[type="text"] {
-						width: calc(100% - 75px);
-						background: none;
-						padding: 1.3rem 1rem;
-						outline: 0;
-
-						&::placeholder {
-							color: $dark;
-						}
-					}
-					&[type="submit"] {
-						width: 75px;
-						text-indent: -9999px;
-						background: $green url("/src/img/icon-search-light.svg")
-							center center no-repeat;
-						cursor: pointer;
-						transition: background 0.2s;
-
-						&:hover {
-							background-color: $orange;
-						}
-					}
 				}
 			}
 		}
@@ -93,6 +65,95 @@
 
 			img {
 				width: 100%;
+			}
+		}
+	}
+
+	// NOUVEAUTES
+	.nouveautes {
+		.newsletter {
+			display: flex;
+			justify-content: center;
+		}
+	}
+
+	// THEMATIQUES
+	.thematiques {
+		.container {
+			@media screen and (min-width: $lg) {
+				display: grid;
+				grid-template-columns: 1fr 3fr;
+			}
+		}
+		.section-title {
+			border-top: $border;
+			padding: 2rem 0;
+
+			@media screen and (min-width: $lg) {
+				border-top: 0;
+				padding: 0;
+			}
+		}
+
+		&__list {
+			@media screen and (min-width: $md) {
+				display: grid;
+				grid-template-columns: repeat(2, 1fr);
+				column-gap: 4rem;
+			}
+
+			@media screen and (min-width: $lg) {
+				grid-template-columns: repeat(3, 1fr);
+				border-top: 6px solid $dark;
+				padding-top: 2rem;
+			}
+		}
+	}
+
+	// COLLECTIONS
+	.collections {
+		.container {
+			@media screen and (min-width: $md) {
+				display: grid;
+				grid-template-columns: repeat(2, 1fr);
+				align-items: start;
+				column-gap: 1.5rem;
+			}
+			@media screen and (min-width: $lg) {
+				grid-template-columns: 2fr 1fr;
+			}
+		}
+
+		.left {
+			position: relative;
+			height: 0;
+			width: 100%;
+			padding-bottom: 100%;
+			border-radius: $radius;
+			overflow: hidden;
+
+			@media screen and (min-width: $lg) {
+				width: 85%;
+				padding-bottom: 60%;
+			}
+
+			img {
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+			}
+		}
+
+		.right {
+			.section-title {
+				margin: 4rem 0 1rem;
+				padding-top: 3rem;
+				border-top: $border;
+
+				@media screen and (min-width: $md) {
+					margin: 0 0 2rem;
+				}
 			}
 		}
 	}

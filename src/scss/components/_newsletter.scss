@@ -1,0 +1,47 @@
+.newsletter {
+	$background: $green;
+	$color: $light;
+
+	form {
+		width: 100%;
+		margin-top: 2rem;
+		border: 2px solid $background;
+		border-radius: 20px;
+		overflow: hidden;
+		display: flex;
+
+		@media screen and (min-width: $lg) {
+			max-width: 500px;
+		}
+
+		input {
+			&[type="email"] {
+				background: none;
+				padding: 1.3rem 1rem;
+				outline: 0;
+				width: 100%;
+
+				&::placeholder {
+					color: $dark;
+					opacity: 0.35;
+				}
+			}
+			&[type="submit"] {
+				background: $background;
+				color: $color;
+				padding: 0 1rem;
+				font-weight: bold;
+				cursor: pointer;
+				transition: background 0.2s;
+
+				@media screen and (min-width: $md) {
+					padding: 0 2rem;
+				}
+
+				&:hover {
+					background-color: darken($background, 10%);
+				}
+			}
+		}
+	}
+}

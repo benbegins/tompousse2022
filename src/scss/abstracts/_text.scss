@@ -2,4 +2,15 @@
 	@include text-2xl;
 	font-weight: 900;
 	font-family: $poppins;
+
+	.text-xl {
+		line-height: 1.2;
+	}
+}
+
+.section-title {
+	@include text-xl;
+	font-weight: 900;
+	font-family: $poppins;
+	line-height: 1.25;
 }

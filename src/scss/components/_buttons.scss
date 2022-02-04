@@ -1,0 +1,133 @@
+// 1. btn-primary
+// 2. btn-secondary
+// 3. link-arrow
+// 4. link-basic
+
+.btn-primary {
+	position: relative;
+	z-index: 1;
+	display: inline-block;
+	@include text-base;
+	font-weight: 800;
+	background: $green;
+	color: $light;
+	padding: 1.2rem 2.5rem;
+	border-radius: $radius;
+	overflow: hidden;
+
+	&::before {
+		content: "";
+		position: absolute;
+		z-index: -1;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		background: darken($green, 10%);
+		transform: scaleX(0);
+		transform-origin: left;
+		transition: transform 0.4s $ease2;
+	}
+
+	&:hover {
+		&::before {
+			transform: scaleX(1);
+			transform-origin: right;
+		}
+	}
+
+	&:focus {
+		box-shadow: inset 0 0 0 2px darken($green, 15%);
+		background-color: darken($green, 5%);
+		outline: none;
+	}
+}
+
+.btn-secondary {
+	@include text-sm;
+	font-weight: 700;
+	display: inline-block;
+	position: relative;
+	z-index: 1;
+	border-radius: 12px;
+	overflow: hidden;
+	background: $dark;
+	color: $light;
+	padding: 0.5rem 1.2rem;
+
+	&::before {
+		content: "";
+		position: absolute;
+		z-index: -1;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		background: $green;
+		transform: scaleX(0);
+		transform-origin: left;
+		transition: transform 0.4s $ease2;
+	}
+
+	&:hover {
+		&::before {
+			transform: scaleX(1);
+			transform-origin: right;
+		}
+	}
+}
+
+.link-arrow {
+	position: relative;
+	display: inline-block;
+	padding: 0.25rem 0;
+
+	&::after {
+		--size: 7px;
+
+		content: "";
+		position: absolute;
+		right: -20px;
+		top: calc(50% - 4px);
+		width: var(--size);
+		height: var(--size);
+		background: url("/src/img/arrow-link.svg") center center no-repeat;
+		background-size: var(--size) var(--size);
+
+		transition: transform 0.2s;
+	}
+
+	&:hover {
+		&::after {
+			transform: translate(2px, -2px);
+		}
+	}
+}
+
+.link-basic {
+	@include text-sm;
+	font-weight: normal;
+	display: inline-block;
+	position: relative;
+
+	&::after {
+		content: "";
+		position: absolute;
+		width: 100%;
+		height: 2px;
+		background: $dark;
+		bottom: 0;
+		left: 0;
+
+		transform: scaleX(1);
+		transform-origin: right;
+		transition: transform 0.35s $ease;
+	}
+
+	&:hover {
+		&::after {
+			transform: scaleX(0);
+			transform-origin: left;
+		}
+	}
+}

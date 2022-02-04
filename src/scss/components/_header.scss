@@ -1,5 +1,6 @@
 .site-header {
 	position: fixed;
+	z-index: 10;
 	background: $light;
 	width: 100%;
 
@@ -8,14 +9,17 @@
 		justify-content: space-between;
 		align-items: center;
 
-		padding-top: 1rem;
-		padding-bottom: 1rem;
+		padding-top: 0.5rem;
+		padding-bottom: 0.5rem;
 
 		@media screen and (min-width: $lg) {
 			align-items: flex-end;
 			background: $light;
 			position: relative;
 			z-index: 42;
+
+			padding-top: 1rem;
+			padding-bottom: 1rem;
 		}
 	}
 
@@ -119,6 +123,7 @@
 			font-family: $poppins;
 			font-weight: 900;
 			font-size: 2.125rem;
+			line-height: 1.2;
 			margin-bottom: 2rem;
 
 			@media screen and (min-width: $lg) {
@@ -162,16 +167,35 @@
 				transform 0.5s 0.15s ease-out;
 
 			@media screen and (min-width: $lg) {
+				position: relative;
+				z-index: 1;
 				opacity: 1;
 				transform: translateX(0);
 				padding: 0.5rem 1.2rem;
 				background: $orange;
 				color: $light;
 				border-radius: 12px;
-				transition: background 0.3s;
+				overflow: hidden;
+
+				&::before {
+					content: "";
+					position: absolute;
+					z-index: -1;
+					width: 100%;
+					height: 100%;
+					top: 0;
+					left: 0;
+					background: darken($orange, 10%);
+					transform: scaleX(0);
+					transform-origin: right;
+					transition: transform 0.4s $ease2;
+				}
 
 				&:hover {
-					background: darken($orange, 5%);
+					&::before {
+						transform: scaleX(1);
+						transform-origin: right;
+					}
 				}
 			}
 		}
@@ -207,31 +231,6 @@
 
 		.search-mobile {
 			padding: var(--nav-spacing) 0;
-			form {
-				background: #edebdf;
-				border-radius: 20px;
-				padding: 0 1.5rem 0 0;
-			}
-			input {
-				display: inline-block;
-
-				&[type="text"] {
-					width: calc(100% - 18px);
-					background: none;
-					padding: 1.5rem 1rem;
-					outline: 0;
-
-					&::placeholder {
-						color: $dark;
-					}
-				}
-				&[type="submit"] {
-					width: 18px;
-					text-indent: -9999px;
-					background: url("/src/img/icon-search.svg") center center
-						no-repeat;
-				}
-			}
 		}
 
 		.search-desktop {
@@ -241,7 +240,7 @@
 				background: url("/src/img/icon-search.svg") center center
 					no-repeat;
 				cursor: pointer;
-				transition: background 0.3s;
+				transition: 0.3s;
 
 				&:hover {
 					background: url("/src/img/icon-search-orange.svg") center
@@ -306,7 +305,7 @@
 				left: 0;
 
 				transform: scaleX(0);
-				transform-origin: center left;
+				transform-origin: right;
 				transition: transform 0.5s $ease;
 			}
 
@@ -360,6 +359,7 @@
 
 				&::before {
 					transform: scaleX(1);
+					transform-origin: left;
 				}
 
 				.background {

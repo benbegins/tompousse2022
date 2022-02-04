@@ -1,0 +1,103 @@
+.page-search {
+	.search-section-title {
+		display: inline-block;
+		position: relative;
+		margin-bottom: 2rem;
+
+		span {
+			position: absolute;
+			top: 0;
+			left: 100%;
+			font-family: $nunito;
+			font-weight: normal;
+			font-size: 12px;
+		}
+	}
+
+	// INTRO
+	.intro {
+		padding: var(--intro-spacing);
+		text-align: center;
+
+		&__title {
+			text-transform: uppercase;
+		}
+
+		&__resultats {
+			@include text-2xl;
+			font-weight: 800;
+			font-family: $poppins;
+			margin-top: 1rem;
+		}
+
+		.form-search {
+			margin-top: 4rem;
+			@media screen and (min-width: $lg) {
+				max-width: 75%;
+				margin: 4rem auto 0;
+			}
+		}
+	}
+
+	// LIVRES
+	.livres {
+		&__list {
+			display: grid;
+			gap: var(--column-spacing);
+			margin-top: 2rem;
+
+			@media screen and (min-width: $md) {
+				grid-template-columns: repeat(2, 1fr);
+			}
+			@media screen and (min-width: $lg) {
+				margin-top: 0;
+				grid-template-columns: repeat(4, 1fr);
+
+				.livre-card {
+					height: 26vw;
+				}
+			}
+		}
+	}
+
+	// AUTEURS
+	.auteurs {
+		&__list {
+			@media screen and (min-width: $lg) {
+				display: grid;
+				grid-template-columns: repeat(3, 1fr);
+				justify-items: start;
+				column-gap: var(--column-spacing);
+			}
+		}
+	}
+
+	// ARTICLES
+	.articles {
+		&__list {
+			@media screen and (min-width: $md) {
+				display: grid;
+				gap: var(--column-spacing);
+				grid-template-columns: repeat(2, 1fr);
+			}
+
+			@media screen and (min-width: $lg) {
+				grid-template-columns: repeat(4, 1fr);
+			}
+
+			.card-article {
+				margin-bottom: 2rem;
+			}
+		}
+	}
+
+	// RECHERCHE
+	.recherche {
+		text-align: center;
+		.container {
+			@media screen and (min-width: $lg) {
+				max-width: 75%;
+			}
+		}
+	}
+}

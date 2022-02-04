@@ -1,0 +1,19 @@
+.page-404 {
+	.content {
+		text-align: center;
+
+		@media screen and (min-width: $lg) {
+			max-width: 35%;
+			margin: 0 auto;
+		}
+	}
+	.img-container {
+		border-radius: $radius;
+		overflow: hidden;
+		margin: 4rem 0;
+
+		img {
+			width: 100%;
+		}
+	}
+}

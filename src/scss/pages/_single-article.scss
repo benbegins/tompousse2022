@@ -1,0 +1,61 @@
+.page-single-article {
+	// INTRO
+	.intro {
+		padding: var(--intro-spacing);
+		text-align: center;
+
+		@media screen and (min-width: $lg) {
+			max-width: 50%;
+			margin: 0 auto;
+		}
+
+		.link-arrow {
+			padding: 0;
+			margin: 0 2rem 0 1rem;
+		}
+	}
+
+	// MAIN CONTENT
+	.main-content {
+		padding: var(--intro-spacing);
+
+		.post-thumbnail {
+			border-radius: $radius;
+			overflow: hidden;
+			margin-bottom: 2rem;
+
+			img {
+				width: 100%;
+			}
+		}
+	}
+
+	// A LIRE AUSSI
+	.related-articles {
+		&__list {
+			@media screen and (min-width: $md) {
+				display: grid;
+				grid-template-columns: repeat(2, 1fr);
+				column-gap: var(--column-spacing);
+			}
+			@media screen and (min-width: $lg) {
+				grid-template-columns: repeat(3, 1fr);
+			}
+		}
+
+		.card-article {
+			margin: 2rem 0;
+
+			@media screen and (min-width: $md) {
+				&:nth-child(3n) {
+					display: none;
+				}
+			}
+			@media screen and (min-width: $lg) {
+				&:nth-child(3n) {
+					display: block;
+				}
+			}
+		}
+	}
+}

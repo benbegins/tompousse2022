@@ -1,0 +1,16 @@
+.slider-articles {
+	$ease: cubic-bezier(0.1, 0, 0, 1);
+
+	position: relative;
+
+	&.swiper {
+		z-index: 0;
+		padding: 0 calc(var(--page-padding) - var(--column-spacing)) 0
+			var(--page-padding);
+		width: 100%;
+	}
+
+	.swiper-slide {
+		padding-right: var(--column-spacing);
+	}
+}

@@ -1,0 +1,67 @@
+.slider-livres {
+	$ease: cubic-bezier(0.1, 0, 0, 1);
+
+	position: relative;
+
+	&.swiper {
+		z-index: 0;
+		padding: 0 calc(var(--page-padding) - var(--column-spacing)) 0
+			var(--page-padding);
+		width: 100%;
+	}
+
+	.swiper-slide {
+		padding-right: var(--column-spacing);
+	}
+
+	.slider-btn {
+		--btn-size: 45px;
+		@media screen and (min-width: $md) {
+			--btn-size: 65px;
+		}
+
+		height: var(--btn-size);
+		width: var(--btn-size);
+		background: url("/src/img/arrow-slider.svg") center center no-repeat;
+		background-size: 22px 21px;
+		cursor: pointer;
+
+		position: absolute;
+		right: calc(var(--page-padding) / 2);
+		top: calc(50% - 32px);
+		z-index: 1;
+
+		&::after {
+			content: "";
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			top: 0;
+			left: 0;
+
+			border: 1px solid $dark;
+			border-radius: 100%;
+
+			transition: 0.3s $ease;
+		}
+
+		&.btn-prev {
+			transform: rotate(180deg);
+			right: auto;
+			left: calc(var(--page-padding) / 2);
+		}
+
+		&.swiper-button-disabled {
+			opacity: 0.15;
+		}
+
+		&:hover {
+			&::after {
+				width: 110%;
+				height: 110%;
+				left: -5%;
+				top: -5%;
+			}
+		}
+	}
+}

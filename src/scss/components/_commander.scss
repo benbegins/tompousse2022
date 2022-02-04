@@ -1,0 +1,137 @@
+.modal-commander {
+	position: fixed;
+	z-index: 10;
+	width: 100%;
+	height: 100%;
+	min-height: 100%;
+	overflow: scroll;
+	left: 0;
+	top: 0;
+	padding: 100px var(--page-padding);
+	visibility: hidden;
+	transition: visibility 0s linear 0.75s, opacity 0.5s;
+
+	@media screen and (min-width: $md) {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	// DISTRIBUTEURS
+	.distributeurs {
+		width: 100%;
+		opacity: 0;
+		transform: translateY(-30%);
+		transition: transform 0.75s $ease, opacity 0.25s;
+
+		@media screen and (min-width: $lg) {
+			width: 70%;
+		}
+
+		&__title {
+			margin-bottom: 2rem;
+		}
+
+		&__list {
+			display: grid;
+			gap: 1rem;
+
+			@media screen and (min-width: $md) {
+				grid-template-columns: repeat(2, 1fr);
+				gap: 2rem;
+			}
+
+			@media screen and (min-width: $lg) {
+				grid-template-columns: repeat(3, 1fr);
+				gap: 2vw;
+			}
+		}
+		&__item {
+			background: white;
+			border-radius: 10px;
+			box-shadow: 0 20px 20px rgba(0, 0, 0, 0.1);
+			transition: box-shadow 0.3s $ease2, transform 0.3s $ease2;
+
+			&:hover {
+				box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+				transform: scale(0.99);
+			}
+
+			a {
+				position: relative;
+				display: block;
+				padding: 2rem;
+				width: 100%;
+				height: 0;
+				padding-bottom: 60%;
+
+				img {
+					position: absolute;
+					top: 20%;
+					left: 20%;
+					width: 60%;
+					height: 60%;
+					object-fit: contain;
+				}
+			}
+		}
+	}
+
+	// BOUTON CLOSE
+	.btn-close__container {
+		position: absolute;
+		width: 30px;
+		height: 30px;
+		top: 3vw;
+		right: 3vw;
+		transition: opacity 0.2s;
+		opacity: 0;
+
+		.btn-close {
+			background: url("/src/img/icon-burger-close.svg") center center
+				no-repeat;
+			background-size: contain;
+			width: 30px;
+			height: 30px;
+			transition: 0.2s;
+
+			&:hover {
+				transform: scale(1.1);
+				// opacity: 0.8;
+			}
+		}
+	}
+
+	// BACKGROUND
+	.background {
+		position: fixed;
+		z-index: -1;
+		width: 100%;
+		height: 100%;
+		left: 0;
+		top: 0;
+		background: $light;
+		transform: scaleY(0);
+		transform-origin: top;
+		transition: transform 0.75s 0s $ease;
+	}
+
+	// MODAL ACTIVE
+	&.active {
+		opacity: 1;
+		visibility: visible;
+		transition: visibility 0s linear 0s, opacity 0.5s;
+
+		.background {
+			transform: scaleY(1);
+			transition: transform 1s $ease;
+		}
+
+		.distributeurs,
+		.btn-close__container {
+			opacity: 1;
+			transform: translateY(0);
+			transition: transform 1.2s $ease, opacity 0.5s 0.35s;
+		}
+	}
+}

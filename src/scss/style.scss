@@ -11,6 +11,31 @@
 
 //Components
 @import "./components/header";
+@import "./components/footer";
+@import "./components/buttons";
+@import "./components/newsletter";
+@import "./components/slider-livres";
+@import "./components/slider-articles";
+@import "./components/card-livre";
+@import "./components/card-article";
+@import "./components/list-article";
+@import "./components/pagination";
+@import "./components/search-modal";
+@import "./components/form-search";
+@import "./components/rich-text";
+@import "./components/commander";
+@import "./components/bulles";
 
 // Pages
 @import "./pages/home";
+@import "./pages/thematiques";
+@import "./pages/single-livre";
+@import "./pages/single-article";
+@import "./pages/search";
+@import "./pages/blog";
+@import "./pages/a-propos";
+@import "./pages/applications";
+@import "./pages/collections";
+@import "./pages/auteurs";
+@import "./pages/contact";
+@import "./pages/404";

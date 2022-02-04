@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
-    <meta charset="<?php bloginfo('charset'); ?>">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <meta charset="<?php bloginfo("charset"); ?>">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1"/>
     
     <?php wp_head(); ?>
 </head>
@@ -15,28 +15,27 @@
     <header class="site-header" :class="{compact: menuCompact}">
         <div class="site-header__container container">
             <div class="logo">
-                <a href="<?= get_site_url(); ?>"></a>
+                <a href="<?= get_site_url() ?>"></a>
             </div>
             <div class="menu">
                 <!-- Burger -->
                 <div class="burger" @click="menuActive = !menuActive, subMenuActive = false" :class="{active: menuActive}"></div>
                 <!-- Main Menu -->
-                <nav class="main-nav" :class="{active: menuActive}">
+                <nav class="main-nav" :class="{active: menuActive}" aria-label="menu principal">
                     <p class="nav-title">Menu</p>
                     <ul>
                         <li><button class="nav-btn nav-btn__nos-livres" @click="subMenuActive = !subMenuActive">Nos livres</button></li>
-                        <li><a href="#">Collections</a></li>
-                        <li><a href="#">Applications</a></li>
-                        <li><a href="#">Blog</a></li>
-                        <li><a href="#">À propos</a></li>
+                        <li><a href="<?= get_site_url() ?>/collections">Collections</a></li>
+                        <li><a href="<?= get_site_url() ?>/applications">Applications</a></li>
+                        <li><a href="<?= get_site_url() ?>/blog">Blog</a></li>
+                        <li><a href="<?= get_site_url() ?>/maison-edition">À propos</a></li>
                         <li class="search-mobile lg:hidden">
-                            <form action="/" method="get">
-                                <input type="text" placeholder="Titre, collection, auteur(e)…" name="s" id="search" value="<?php the_search_query(); ?>" />
-                                <input type="submit" value="Rechercher">
-                            </form>
+                            <?php get_template_part(
+                            	"./template-parts/form-search"
+                            ); ?>
                         </li>
                         <li class="search-desktop hidden lg:block">
-                            <button class="btn-search">Recherche</button>
+                            <button class="btn-search" @click="openSearchModal">Recherche</button>
                         </li>
                     </ul>     
                 </nav>
@@ -45,19 +44,24 @@
                     <button class="btn-back" @click="subMenuActive = false"></button>
                     <p class="nav-title">Thématiques</p>
                     <ul>
-                        <?php 
-                        $args = array(
-                            'taxonomy' => 'thematiques',
-                            'parent' => 0,
-                        );
+                        <?php
+                        $args = [
+                        	"taxonomy" => "thematiques",
+                        	"parent" => 0,
+                        ];
                         $thematiques = get_terms($args);
-                        foreach($thematiques as $thematique):
-                            $name = $thematique->name;
-                            $count = $thematique->count;
-                            $link = get_term_link($thematique->term_id);
-                            
-                            echo '<li><a href="' . $link . '">' . $name . ' <sup>' . $count . '</sup></a></li>';
+                        foreach ($thematiques as $thematique):
+                        	$name = $thematique->name;
+                        	$count = $thematique->count;
+                        	$link = get_term_link($thematique->term_id);
 
+                        	echo '<li><a href="' .
+                        		$link .
+                        		'">' .
+                        		$name .
+                        		" <sup>" .
+                        		$count .
+                        		"</sup></a></li>";
                         endforeach;
                         ?>
                     </ul>
@@ -65,30 +69,37 @@
                 </div>
             </div>
             <!-- Liens RS -->
+            <?php
+            $instagram = get_field("instagram", "option");
+            $facebook = get_field("facebook", "option");
+            $twitter = get_field("twitter", "option");
+            $linkedin = get_field("linkedin", "option");
+            $youtube = get_field("youtube", "option");
+            ?>
             <ul class="reseaux hidden lg:block">
                 <li>
-                    <a href="">
-                        <img src="<?= get_template_directory_uri(); ?>/src/img/icon-instagram.svg" alt="Instagram">
+                    <a href="<?= $instagram ?>" target="_blank">
+                        <img src="<?= get_template_directory_uri() ?>/src/img/icon-instagram.svg" alt="Instagram">
                     </a>
                 </li>
                 <li>
-                    <a href="">
-                        <img src="<?= get_template_directory_uri(); ?>/src/img/icon-facebook.svg" alt="facebook">
+                    <a href="<?= $facebook ?>" target="_blank">
+                        <img src="<?= get_template_directory_uri() ?>/src/img/icon-facebook.svg" alt="facebook">
                     </a>
                 </li>
                 <li>
-                    <a href="">
-                        <img src="<?= get_template_directory_uri(); ?>/src/img/icon-twitter.svg" alt="twitter">
+                    <a href="<?= $twitter ?>" target="_blank">
+                        <img src="<?= get_template_directory_uri() ?>/src/img/icon-twitter.svg" alt="twitter">
                     </a>
                 </li>
                 <li>
-                    <a href="">
-                        <img src="<?= get_template_directory_uri(); ?>/src/img/icon-linkedin.svg" alt="linkedin">
+                    <a href="<?= $linkedin ?>" target="_blank">
+                        <img src="<?= get_template_directory_uri() ?>/src/img/icon-linkedin.svg" alt="linkedin">
                     </a>
                 </li>
                 <li>
-                    <a href="">
-                        <img src="<?= get_template_directory_uri(); ?>/src/img/icon-youtube.svg" alt="youtube">
+                    <a href="<?= $youtube ?>" target="_blank">
+                        <img src="<?= get_template_directory_uri() ?>/src/img/icon-youtube.svg" alt="youtube">
                     </a>
                 </li>
             </ul>
@@ -97,3 +108,6 @@
         <div class="overlay overlay-menu lg:hidden" :class="{active: menuActive}" @click="menuActive = false"></div>
         <div class="overlay overlay-submenu" :class="{active: subMenuActive}" @click="subMenuActive = false" @mouseOver="closeSubMenu"></div>
     </header>
+    
+    <?php get_template_part("./template-parts/search-modal"); ?>
+    <div class="site-intro"></div>

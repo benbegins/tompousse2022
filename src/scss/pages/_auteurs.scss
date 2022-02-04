@@ -1,0 +1,115 @@
+// PAGE LISTE AUTEURS
+.page-auteurs {
+	.intro {
+		text-align: center;
+		padding: var(--intro-spacing);
+	}
+
+	.auteurs {
+		&__list {
+			text-align: left;
+
+			@media screen and (min-width: $md) {
+				display: inline-block;
+				margin: 0 auto;
+			}
+
+			.letter {
+				@include text-xl;
+				font-family: $poppins;
+				text-transform: uppercase;
+				font-weight: 800;
+				color: $orange;
+				margin-top: 4rem;
+
+				&:first-child {
+					margin-top: 0;
+				}
+			}
+		}
+
+		&__item {
+			a {
+				display: inline-block;
+				transition: color 0.2s;
+				padding: 0.25rem 0;
+
+				&:hover {
+					color: $orange;
+				}
+			}
+		}
+	}
+}
+
+// FICHE AUTEUR
+.fiche-auteur {
+	.presentation {
+		.container {
+			@media screen and (min-width: $md) {
+				display: grid;
+				grid-template-columns: repeat(2, 1fr);
+			}
+
+			@media screen and (min-width: $lg) {
+				grid-template-columns: 7fr 5fr;
+			}
+		}
+		.left {
+			@media screen and (min-width: $lg) {
+				border-top: $border;
+				padding-top: 1rem;
+			}
+		}
+
+		.right {
+			margin-top: 4rem;
+
+			@media screen and (min-width: $md) {
+				margin-top: 0;
+				padding-left: 20%;
+			}
+
+			.img-container {
+				position: relative;
+				width: 100%;
+				height: 0;
+				padding-bottom: 100%;
+				border-radius: $radius;
+				overflow: hidden;
+
+				@media screen and (min-width: $lg) {
+					padding-bottom: 125%;
+				}
+
+				img {
+					position: absolute;
+					width: 100%;
+					height: 100%;
+					object-fit: cover;
+				}
+			}
+
+			.portrait-generique {
+				display: none;
+			}
+		}
+
+		&__description {
+			padding: 2rem 0;
+		}
+	}
+
+	.livres {
+		&__list {
+			@media screen and (min-width: $md) {
+				display: grid;
+				grid-template-columns: repeat(2, 1fr);
+				column-gap: var(--column-spacing);
+			}
+			@media screen and (min-width: $lg) {
+				grid-template-columns: repeat(3, 1fr);
+			}
+		}
+	}
+}

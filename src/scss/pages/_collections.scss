@@ -1,0 +1,89 @@
+.page-collections {
+	// PAGE GENERIQUE
+	.intro {
+		text-align: center;
+		padding: var(--intro-spacing);
+
+		&__title {
+			margin-bottom: 1rem;
+		}
+
+		&__description {
+			@media screen and (min-width: $lg) {
+				max-width: 50%;
+				margin: 0 auto;
+			}
+		}
+	}
+
+	.collection {
+		&__content {
+			border-top: $border;
+			padding-top: 2rem;
+			margin-bottom: 4rem;
+
+			@media screen and (min-width: $lg) {
+				display: grid;
+				grid-template-columns: 1fr 2fr 1fr;
+				column-gap: var(--column-spacing);
+
+				padding-top: 3rem;
+				margin-bottom: 6rem;
+			}
+		}
+		&__description {
+			margin: 1rem 0;
+			@media screen and (min-width: $lg) {
+				margin: 0;
+				column-count: 2;
+				column-gap: var(--column-spacing);
+			}
+		}
+
+		&__link {
+			@media screen and (min-width: $lg) {
+				text-align: right;
+			}
+		}
+
+		.slider-livres {
+			@media screen and (min-width: $lg) {
+				width: calc(
+					(100% - (var(--page-padding))) * 0.75 +
+						var(--column-spacing)
+				);
+
+				margin-left: auto;
+				margin-right: 0;
+				padding-left: var(--column-spacing);
+
+				.livre-card {
+					height: 26vw;
+				}
+
+				.slider-btn.btn-prev {
+					left: calc(var(--column-spacing) / 3);
+				}
+			}
+		}
+	}
+
+	// PAGE TAXONOMY
+	.livres__list {
+		display: grid;
+		gap: var(--column-spacing);
+		margin-top: 2rem;
+
+		@media screen and (min-width: $md) {
+			grid-template-columns: repeat(2, 1fr);
+		}
+		@media screen and (min-width: $lg) {
+			margin-top: 0;
+			grid-template-columns: repeat(4, 1fr);
+
+			.livre-card {
+				height: 26vw;
+			}
+		}
+	}
+}

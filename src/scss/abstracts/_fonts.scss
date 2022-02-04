@@ -57,7 +57,7 @@ body {
 @mixin text-2xl {
 	font-size: 4.375rem;
 	font-size: max(2.19rem, 1.67rem + 2.57vw);
-	line-height: 1.2;
+	line-height: 1;
 }
 .text-2xl {
 	@include text-2xl;
