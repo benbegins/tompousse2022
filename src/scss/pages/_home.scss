@@ -1,37 +1,31 @@
 .home {
 	// HERO
 	.hero {
-		&__container {
-			background: #fce8d7;
-			overflow: hidden;
-
-			@media screen and (min-width: $md) {
-				padding: 0 var(--page-padding);
-			}
+		.container {
+			background: url("/src/img/home-hero-mobile.jpg") center center
+				no-repeat;
+			background-size: cover;
 
 			@media screen and (min-width: $lg) {
-				margin: 0 var(--page-padding);
-				padding: 0 0 0 var(--page-padding);
-
-				display: grid;
-				grid-template-columns: repeat(2, 1fr);
-				align-items: end;
-
-				border-radius: 20px;
-				overflow: hidden;
+				background: none;
 			}
 		}
 
-		// Left
-		.left {
-			padding: 4rem var(--page-padding);
+		.text-wrapper {
+			padding: 100px 0;
+			text-align: center;
+			min-height: calc(100vh - 78px);
 
-			@media screen and (min-width: $md) {
-				padding: 8rem 0;
-			}
+			display: flex;
+			align-items: center;
 
 			@media screen and (min-width: $lg) {
-				padding: 8vw 0;
+				background: url("/src/img/home-hero.jpg") center center
+					no-repeat;
+				background-size: cover;
+				background-attachment: fixed;
+				min-height: calc(100vh - 130px - var(--page-padding));
+				border-radius: $radius;
 			}
 
 			.page-title {
@@ -49,24 +43,66 @@
 				margin-top: 2rem;
 				@media screen and (min-width: $lg) {
 					max-width: 500px;
+					margin: 2rem auto 0;
+				}
+			}
+
+			.text-content {
+				@media screen and (min-width: $lg) {
+					max-width: 50%;
+					margin: 0 auto;
 				}
 			}
 		}
 
-		// Right
-		.right {
-			@media screen and (min-width: $md) {
-				display: none;
-			}
-			@media screen and (min-width: $lg) {
-				display: block;
-				padding-left: var(--page-padding);
-			}
+		// &__container {
+		// 	background: #fce8d7;
+		// 	overflow: hidden;
 
-			img {
-				width: 100%;
-			}
-		}
+		// 	@media screen and (min-width: $md) {
+		// 		padding: 0 var(--page-padding);
+		// 	}
+
+		// 	@media screen and (min-width: $lg) {
+		// 		margin: 0 var(--page-padding);
+		// 		padding: 0 0 0 var(--page-padding);
+
+		// 		display: grid;
+		// 		grid-template-columns: repeat(2, 1fr);
+		// 		align-items: end;
+
+		// 		border-radius: 20px;
+		// 		overflow: hidden;
+		// 	}
+		// }
+
+		// Left
+		// .left {
+		// 	padding: 4rem var(--page-padding);
+
+		// 	@media screen and (min-width: $md) {
+		// 		padding: 8rem 0;
+		// 	}
+
+		// 	@media screen and (min-width: $lg) {
+		// 		padding: 8vw 0;
+		// 	}
+		// }
+
+		// // Right
+		// .right {
+		// 	@media screen and (min-width: $md) {
+		// 		display: none;
+		// 	}
+		// 	@media screen and (min-width: $lg) {
+		// 		display: block;
+		// 		padding-left: var(--page-padding);
+		// 	}
+
+		// 	img {
+		// 		width: 100%;
+		// 	}
+		// }
 	}
 
 	// NOUVEAUTES

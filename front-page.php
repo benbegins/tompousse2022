@@ -4,15 +4,14 @@
         
         <!-- HERO -->
         <section class="hero">
-            <div class="hero__container">
-                <div class="left">
-                    <h1 class="page-title" data-reveal><span class="text-xl">Maison d'édition</span><br>Spécialiste des troubles des apprentissages, de la cognition et des troubles Dys</h1>
-                    <div data-reveal><?php get_template_part(
-                    	"./template-parts/form-search"
-                    ); ?></div>
-                </div>
-                <div class="right" data-reveal>
-                    <img src="<?= get_template_directory_uri() ?>/src/img/home-hero.jpg" alt="Livres Éditions Tom Pousse">
+            <div class="container">
+                <div class="text-wrapper">
+                    <div class="text-content">
+                        <h1 class="page-title" data-reveal><span class="text-xl">Maison d'édition</span><br>Spécialiste des&nbsp;troubles des&nbsp;apprentissages, de&nbsp;la&nbsp;cognition et des&nbsp;troubles Dys</h1>
+                        <div data-reveal><?php get_template_part(
+                        	"./template-parts/form-search"
+                        ); ?></div>
+                    </div>
                 </div>
             </div>
         </section>

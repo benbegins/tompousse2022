@@ -5,6 +5,7 @@ import transition from "./transition"
 import sliders from "./sliders"
 import filtreThematiques from "./filtre-thematiques"
 import bulles from "./bulles"
+import parallax from "./parallax"
 
 Vue.createApp(App).mount("#page")
 
@@ -13,6 +14,7 @@ const init = () => {
 	sliders()
 	filtreThematiques()
 	transition()
+	parallax()
 }
 window.addEventListener("load", () => {
 	init()
