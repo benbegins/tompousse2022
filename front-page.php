@@ -80,11 +80,11 @@
                 </div>
             </div>
 
-            <div class="container text-center mt-8 lg:hidden">
+            <div class="container text-left md:text-center mt-8 lg:hidden">
                 <a href="<?= $nouveautes_link ?>" class="btn-secondary">Toutes nos nouveautés</a>    
             </div>
 
-            <div class="container text-center mt-16">
+            <div class="container text-left md:text-center mt-16">
                 <h2 class="section-title">Restez informés</h2>
                 <p>Recevez toutes les nouveautés et bien plus dans votre boite mail.</p>
                 <?php get_template_part("./template-parts/newsletter"); ?>
@@ -150,7 +150,7 @@
             <div class="container lg:flex lg:items-center lg:justify-between">
                 <h2 class="section-title">Les derniers articles</h2>
                 <div class="hidden lg:block">
-                    <a href="" class="btn-secondary">Voir le blog</a>    
+                    <a href="<?= get_site_url() ?>/blog" class="btn-secondary">Voir le blog</a>    
                 </div>
             </div>
             <div class="slider-articles mt-8 swiper">
@@ -180,6 +180,9 @@
                     wp_reset_postdata();
                     ?>
                 </ul>
+            </div>
+            <div class="container text-left md:text-center mt-8 lg:hidden">
+                <a href="<?= get_site_url() ?>/blog" class="btn-secondary">Voir le blog</a>    
             </div>
         </section>
 
