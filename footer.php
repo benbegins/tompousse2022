@@ -5,7 +5,7 @@
                     <!-- Newsletter -->
                     <div class="footer-newsletter">
                         <p class="section-title">Newsletter</p>
-                        <p class="my-8">Inscrivez-vous pour connaitre les nouveautés et participer aux évènements Tom Pousse.</p>
+                        <p class="my-8">Inscrivez-vous pour être informé de la sortie de nos prochaines publications.</p>
                         <?php get_template_part(
                         	"./template-parts/newsletter"
                         ); ?>
@@ -18,6 +18,7 @@
                             $args = [
                             	"taxonomy" => "thematiques",
                             	"parent" => 0,
+                            	"orderby" => "term_id",
                             ];
                             $thematiques = get_terms($args);
                             foreach ($thematiques as $thematique):

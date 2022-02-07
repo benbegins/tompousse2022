@@ -9,7 +9,8 @@ get_header(); ?>
     <!-- INTRO -->
     <section class="intro">
         <div class="container text-center">
-            <h1 class="page-title" data-reveal>Blog</h1>
+            <h1 class="intro__title page-title" data-reveal>Blog</h1>
+            <div class="intro__description" data-reveal><?php the_content(); ?></div>
         </div>
     </section>
 

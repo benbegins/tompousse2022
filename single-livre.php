@@ -61,6 +61,9 @@ $couleur = get_field("couleur_principale");
                     <div class="prix-commander">
                         <p class="prix"><?php the_field("prix"); ?> €</p>
                         <button class="btn-primary commander" @click="commanderModal = true">Commander</button>
+                        <?php if (get_field("version_numerique")): ?>
+                        <p class="version-numerique">Disponible en versions papier et numérique</p>
+                        <?php endif; ?>
                     </div>
                     <div class="description">
                         <?php the_field("description_du_livre"); ?>
@@ -203,10 +206,12 @@ foreach ($auteurs as $auteur):
                 <?php foreach ($thematiques as $thematique):
                 	$slug = $thematique->slug;
                 	$link = get_term_link($thematique->slug, "thematiques");
+                	// Lien d'une thématique autre que Nouveautés
                 	if ($slug !== "nouveautes") {
                 		break;
                 	}
                 endforeach; ?>
+                    
                     <a href="<?= $link ?>" class="btn-secondary">Explorer cette thématique</a>    
                 </div>
             </div>
@@ -216,11 +221,13 @@ foreach ($auteurs as $auteur):
                 $tax_query = ["relation" => "OR"];
 
                 foreach ($thematiques as $thematique) {
-                	$tax_query[] = [
-                		"taxonomy" => "thematiques",
-                		"field" => "slug",
-                		"terms" => $thematique->slug,
-                	];
+                	if ($thematique->slug !== "nouveautes") {
+                		$tax_query[] = [
+                			"taxonomy" => "thematiques",
+                			"field" => "slug",
+                			"terms" => $thematique->slug,
+                		];
+                	}
                 }
 
                 $args = [

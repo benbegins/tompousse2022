@@ -86,7 +86,7 @@
 
             <div class="container text-left md:text-center mt-16">
                 <h2 class="section-title">Restez informés</h2>
-                <p>Recevez toutes les nouveautés et bien plus dans votre boite mail.</p>
+                <p>Tenez-vous au courant de la sortie nos prochaines publications.</p>
                 <?php get_template_part("./template-parts/newsletter"); ?>
             </div>
                 
@@ -138,7 +138,7 @@
                 </div>
                 <div class="right">
                     <h2 class="section-title">Nos collections</h2>
-                    <p>Guides pratiques, méthodes pédagogiques éprouvées, ou encore témoignages poignants et formateurs, à destination des enseignants ou des parents, découvrez les 7 collections Tom Pousse.</p>
+                    <p>Guides pratiques, méthodes pédagogiques éprouvées, ou encore témoignages poignants et formateurs, découvrez les collections Tom Pousse destinés aux aidants et aux professionnels.</p>
                     <a href="<?= get_site_url() ?>/collections" class="btn-secondary mt-6">Voir les collections</a>
                 </div>
             </div>

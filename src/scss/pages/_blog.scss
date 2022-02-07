@@ -1,6 +1,18 @@
 .page-blog {
 	.intro {
+		text-align: center;
 		padding: var(--intro-spacing);
+
+		&__title {
+			margin-bottom: 1rem;
+		}
+
+		&__description {
+			@media screen and (min-width: $lg) {
+				max-width: 50%;
+				margin: 0 auto;
+			}
+		}
 	}
 	.articles {
 		.container {

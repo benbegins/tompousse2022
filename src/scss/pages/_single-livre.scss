@@ -114,11 +114,24 @@
 			.prix-commander {
 				display: flex;
 				align-items: center;
+				flex-wrap: wrap;
 				margin: 4rem 0;
 
 				.prix {
 					font-weight: 800;
-					margin-right: 2rem;
+					// margin-right: 2rem;
+					// flex: 1;
+				}
+
+				.commander {
+					// flex: 1;
+					margin: 1rem 2rem;
+				}
+
+				.version-numerique {
+					font-size: 0.85rem;
+					opacity: 0.5;
+					line-height: 1.3;
 				}
 			}
 
