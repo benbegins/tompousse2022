@@ -7,11 +7,18 @@ gsap.defaults({
 const transition = () => {
 	// Page transition IN
 	const tlIntro = gsap.timeline({})
-	tlIntro.to(".site-intro", {
-		scaleX: 0,
-		transformOrigin: "left",
-		duration: 1,
-	})
+	tlIntro.fromTo(
+		".site-intro",
+		{
+			scaleX: 1,
+		},
+		{
+			scaleX: 0,
+			transformOrigin: "left",
+			ease: "Power3.out",
+			duration: 1,
+		}
+	)
 	tlIntro.from(
 		"[data-reveal]",
 		{
@@ -33,12 +40,16 @@ const transition = () => {
 			if (!link.classList.contains("no-transition")) {
 				const href = link.href
 				e.preventDefault()
-				gsap.to(".site-intro", {
+				const tl = gsap.timeline()
+				tl.to(".site-intro", {
 					scaleX: 1,
 					transformOrigin: "right",
+					ease: "power3.in",
 					duration: 1,
-					onComplete: window.location.assign(href),
 				})
+				setTimeout(() => {
+					window.location.assign(href)
+				}, 1000)
 			}
 		})
 	})

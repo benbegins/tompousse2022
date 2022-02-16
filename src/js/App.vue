@@ -10,6 +10,7 @@ export default {
 			commanderModal: false,
 		}
 	},
+
 	methods: {
 		closeSubMenu() {
 			if (window.innerWidth >= 1024) {
@@ -51,10 +52,12 @@ export default {
 			}
 		},
 	},
+
 	mounted() {
 		this.menu()
 		this.linkClasses()
 	},
+
 	watch: {
 		menuActive: function (val) {
 			this.bodyOverflow(val)

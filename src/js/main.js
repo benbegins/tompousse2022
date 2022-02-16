@@ -16,6 +16,5 @@ const init = () => {
 	transition()
 	parallax()
 }
-window.addEventListener("load", () => {
-	init()
-})
+
+window.addEventListener("pageshow", init)

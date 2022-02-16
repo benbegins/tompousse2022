@@ -10,6 +10,8 @@
 <body <?php body_class(); ?> >
 <?php wp_body_open(); ?>
 
+<div class="site-intro"></div>
+
 <div id="page" class="site-container">
 
     <header class="site-header" :class="{compact: menuCompact}">
@@ -110,4 +112,4 @@
     </header>
     
     <?php get_template_part("./template-parts/search-modal"); ?>
-    <div class="site-intro"></div>
+     ?> ?> ?>
