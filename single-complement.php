@@ -106,6 +106,14 @@
                         <?php endif; ?>
 
 
+                        <!-- TOUT TELECHARGER -->
+                        <?php 
+                        $tout_telecharger = get_field('tout_telecharger');
+                        if($tout_telecharger): 
+                        ?>
+                        <a href="<?= $tout_telecharger['url'] ?>" download="<?= $tout_telecharger['name'] ?>" target="_blank" class="btn-primary mt-16">Télécharger tous les documents</a>
+                        <?php endif; ?>
+
                     </div>
                 </div>
 
