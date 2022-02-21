@@ -46,10 +46,11 @@ const transition = () => {
 					transformOrigin: "right",
 					ease: "power3.in",
 					duration: 1,
+					// onComplete: window.location.assign(href),
 				})
 				setTimeout(() => {
 					window.location.assign(href)
-				}, 1000)
+				}, 500)
 			}
 		})
 	})
