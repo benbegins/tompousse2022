@@ -60,6 +60,7 @@
                         $args = [
                         	"taxonomy" => "thematiques",
                         	"parent" => 0,
+                            "orderby" => "term_id",
                         ];
                         $thematiques = get_terms($args);
                         foreach ($thematiques as $thematique):
