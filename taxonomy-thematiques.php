@@ -77,49 +77,50 @@ $term = $wp_query->queried_object;
                 ?>
 
                 <!-- Livres -->
-                <div class="livres__list-container">
-                    <div class="livres__list<?php if (!$sub_categories) {
-                    	echo " full-size";
-                    } ?>" data-reveal>
+                <div class="livres__list-wrapper">
+                    <div class="livres__list__search-progress"><span>Recherche en cours...</span></div>
+                    <div class="livres__list-container">
+                        <div class="livres__list<?php if (!$sub_categories) {
+                            echo " full-size";
+                        } ?>" data-reveal>
                     
-                        <?php
-                        $args = [
-                        	"post_type" => ["livre"],
-                        	"paged" => $paged,
-                        	"tax_query" => [
-                        		[
-                        			"taxonomy" => "thematiques",
-                        			"field" => "slug",
-                        			"terms" => $term->slug,
-                        		],
-                        	],
-                        ];
-                        $query = new WP_Query($args);
-                        if ($query->have_posts()) {
-                        	while ($query->have_posts()) {
-                        		$query->the_post();
-                        		get_template_part(
-                        			"./template-parts/livre-card"
-                        		);
-                        	}
-                        } else {
-                        	echo "Pas de livres à afficher dans cette thématique";
-                        }
-                        ?>
+                            <?php
+                            $args = [
+                                "post_type" => ["livre"],
+                                "paged" => $paged,
+                                "tax_query" => [
+                                    [
+                                        "taxonomy" => "thematiques",
+                                        "field" => "slug",
+                                        "terms" => $term->slug,
+                                    ],
+                                ],
+                            ];
+                            $query = new WP_Query($args);
+                            if ($query->have_posts()) {
+                                while ($query->have_posts()) {
+                                    $query->the_post();
+                                    get_template_part(
+                                        "./template-parts/livre-card"
+                                    );
+                                }
+                            } else {
+                                echo "Pas de livres à afficher dans cette thématique";
+                            }
+                            ?>
+                        </div>
+                        <!-- Pagination -->
+                        <div>
+                            <?php
+                            $args = [
+                                "class" => "pagination",
+                                "show_all" => "true",
+                                "screen_reader_text" => "Navigation des livres",
+                            ];
+                            the_posts_pagination($args);
+                            ?>
+                        </div>
                     </div>
-
-                    <!-- Pagination -->
-                    <div>
-                        <?php
-                        $args = [
-                        	"class" => "pagination",
-                        	"show_all" => "true",
-                        	"screen_reader_text" => "Navigation des livres",
-                        ];
-                        the_posts_pagination($args);
-                        ?>
-                    </div>
-
                 </div>
 
             </div>

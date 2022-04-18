@@ -94,7 +94,13 @@ const filtreThematiques = () => {
 		const livresContainer = pageThematiques.querySelector(
 			".livres__list-container"
 		)
+		const rechercheEnCours = pageThematiques.querySelector(
+			".livres__list__search-progress"
+		)
+
+		// Fade out + Recherche en cours
 		livresContainer.style.opacity = 0
+		rechercheEnCours.style.display = "block"
 
 		// Params
 		let params = new URLSearchParams()
@@ -107,7 +113,9 @@ const filtreThematiques = () => {
 			if (response.data.data) {
 				livresContainer.innerHTML = response.data.data
 				livresContainer.style.opacity = 1
+				rechercheEnCours.style.display = "none"
 			} else {
+				rechercheEnCours.style.display = "none"
 				livresContainer.innerHTML =
 					"Pas de livres correspondant à la recherche"
 			}
