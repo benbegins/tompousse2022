@@ -7,7 +7,10 @@
             <div class="container">
                 <div class="text-wrapper">
                     <div class="text-content">
-                        <h1 class="page-title" data-reveal><span class="text-xl">Maison d'édition</span><br>Spécialiste des&nbsp;troubles des&nbsp;apprentissages, de&nbsp;la&nbsp;cognition et des&nbsp;troubles Dys</h1>
+                        <h1 class="page-title" data-reveal>
+                            <div class="page-title__main">Maison d'édition</div>
+                            <div class="page-title__sub">Pour accompagner les enfants et les adultes en difficulté d’apprentissage et/ou en situation de handicap</div>
+                        </h1>
                         <div data-reveal><?php get_template_part(
                         	"./template-parts/form-search"
                         ); ?></div>

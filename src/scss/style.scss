@@ -8,6 +8,7 @@
 @import "./abstracts/global";
 @import "./abstracts/spacing";
 @import "./abstracts/text";
+@import "./abstracts/page-transition";
 
 //Components
 @import "./components/header";
@@ -25,6 +26,7 @@
 @import "./components/rich-text";
 @import "./components/commander";
 @import "./components/bulles";
+@import "./components/custom-cursor";
 
 // Pages
 @import "./pages/home";

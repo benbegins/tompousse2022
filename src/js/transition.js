@@ -8,16 +8,34 @@ const transition = () => {
 	// Page transition IN
 	const tlIntro = gsap.timeline({})
 	tlIntro.fromTo(
-		".site-intro",
+		".page-transition__intro",
 		{
 			scaleX: 1,
 		},
 		{
 			scaleX: 0,
 			transformOrigin: "left",
-			ease: "Power3.out",
+			ease: "power3.inOut",
 			duration: 1,
 		}
+	)
+	tlIntro.to(
+		".page-transition__loading",
+		{
+			opacity: 0,
+			duration: 0.5,
+			ease: "linear",
+		},
+		"-=1"
+	)
+	tlIntro.to(
+		".page-transition__overlay",
+		{
+			opacity: 0,
+			duration: 0.5,
+			ease: "linear",
+		},
+		"-=0.5"
 	)
 	tlIntro.from(
 		"[data-reveal]",
@@ -28,7 +46,7 @@ const transition = () => {
 			ease: "power3.out",
 			stagger: 0.25,
 		},
-		"-=1"
+		"-=0.5"
 	)
 	// Page transition Out
 	const links = document.querySelectorAll("a")
@@ -40,17 +58,38 @@ const transition = () => {
 			if (!link.classList.contains("no-transition")) {
 				const href = link.href
 				e.preventDefault()
-				const tl = gsap.timeline()
-				tl.to(".site-intro", {
-					scaleX: 1,
-					transformOrigin: "right",
-					ease: "power3.in",
-					duration: 1,
-					// onComplete: window.location.assign(href),
+				const tlOutro = gsap.timeline()
+
+				tlOutro.to(".page-transition__overlay", {
+					opacity: 0.85,
+					duration: 0.5,
+					ease: "linear",
 				})
+
+				tlOutro.to(
+					".page-transition__loading",
+					{
+						opacity: 1,
+						duration: 0.5,
+						ease: "linear",
+					},
+					"-=0"
+				)
+
+				tlOutro.to(
+					".page-transition__intro",
+					{
+						scaleX: 1,
+						transformOrigin: "right",
+						ease: "power3.inOut",
+						duration: 1,
+					},
+					"-=1"
+				)
+
 				setTimeout(() => {
 					window.location.assign(href)
-				}, 500)
+				}, 1000)
 			}
 		})
 	})

@@ -36,6 +36,22 @@
                 </a>
             </li>
             <?php endif; ?>
+            
+            <?php if (get_field("lalibrairie")): ?>
+            <li class="distributeurs__item">
+                <a href="<?php the_field("lalibrairie"); ?>" target="_blank">
+                    <img src="<?= get_template_directory_uri() ?>/src/img/commander/lalibrairie.png" alt="Commander sur lalibrairie.com">
+                </a>
+            </li>
+            <?php endif; ?>
+            
+            <?php if (get_field("librairies_independantes")): ?>
+            <li class="distributeurs__item">
+                <a href="<?php the_field("librairies_independantes"); ?>" target="_blank">
+                    <img src="<?= get_template_directory_uri() ?>/src/img/commander/librairies-independantes.png" alt="Commander sur Librairies Indépendantes">
+                </a>
+            </li>
+            <?php endif; ?>
 
             <?php if (get_field("mot_a_mot")): ?>
             <li class="distributeurs__item">

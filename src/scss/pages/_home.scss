@@ -29,13 +29,14 @@
 			}
 
 			.page-title {
-				font-size: 3.44rem;
-				font-size: max(1.88rem, 1.51rem + 1.84vw);
-				line-height: 1.2;
+				&__main {
+					@include text-2xl;
+					text-transform: uppercase;
+				}
 
-				span.text-xl {
-					font-size: 1.75rem;
-					font-size: max(1.25rem, 1.13rem + 0.59vw);
+				&__sub {
+					@include text-lg;
+					text-transform: none;
 				}
 			}
 
@@ -54,55 +55,6 @@
 				}
 			}
 		}
-
-		// &__container {
-		// 	background: #fce8d7;
-		// 	overflow: hidden;
-
-		// 	@media screen and (min-width: $md) {
-		// 		padding: 0 var(--page-padding);
-		// 	}
-
-		// 	@media screen and (min-width: $lg) {
-		// 		margin: 0 var(--page-padding);
-		// 		padding: 0 0 0 var(--page-padding);
-
-		// 		display: grid;
-		// 		grid-template-columns: repeat(2, 1fr);
-		// 		align-items: end;
-
-		// 		border-radius: 20px;
-		// 		overflow: hidden;
-		// 	}
-		// }
-
-		// Left
-		// .left {
-		// 	padding: 4rem var(--page-padding);
-
-		// 	@media screen and (min-width: $md) {
-		// 		padding: 8rem 0;
-		// 	}
-
-		// 	@media screen and (min-width: $lg) {
-		// 		padding: 8vw 0;
-		// 	}
-		// }
-
-		// // Right
-		// .right {
-		// 	@media screen and (min-width: $md) {
-		// 		display: none;
-		// 	}
-		// 	@media screen and (min-width: $lg) {
-		// 		display: block;
-		// 		padding-left: var(--page-padding);
-		// 	}
-
-		// 	img {
-		// 		width: 100%;
-		// 	}
-		// }
 	}
 
 	// NOUVEAUTES

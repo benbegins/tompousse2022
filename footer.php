@@ -132,6 +132,8 @@
 
 </div><!-- #page -->
 
+<?php get_template_part('./template-parts/custom-cursor'); ?>
+
 <?php wp_footer(); ?>
 
 </body>

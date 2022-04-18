@@ -24,13 +24,13 @@ $couleur = get_field("couleur_principale");
                         <?php if (get_field("feuilleteur")): ?>
                         <a href="<?php the_field(
                         	"feuilleteur"
-                        ); ?>" class="links__item extrait" target="_blank" style="background-color:<?= $couleur ?>">Feuilleter un extrait</a>
+                        ); ?>" class="links__item extrait no-cursor" target="_blank" style="background-color:<?= $couleur ?>">Feuilleter un extrait</a>
                         <?php endif; ?>
                         <!-- Compléments simple-->
                         <?php if (get_field("complements")): ?>
                         <a href="<?php the_field(
                         	"complements"
-                        ); ?>" class="links__item complements" target="_blank" style="background-color:<?= $couleur ?>">Télécharger les compléments</a>
+                        ); ?>" class="links__item complements no-cursor" target="_blank" style="background-color:<?= $couleur ?>">Télécharger les compléments</a>
                         <?php endif; ?>
                         <!-- Page compléments-->
                         <?php
@@ -38,7 +38,7 @@ $couleur = get_field("couleur_principale");
                         if ($page_complement): ?>
                             <a href="<?= get_permalink(
                             	$page_complement->ID
-                            ) ?>" class="links__item page-complement" style="background-color:<?= $couleur ?>">Voir les compléments</a>
+                            ) ?>" class="links__item page-complement no-cursor" style="background-color:<?= $couleur ?>">Voir les compléments</a>
                         <?php endif;
                         ?>
                     </div>

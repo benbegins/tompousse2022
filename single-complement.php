@@ -57,7 +57,7 @@
                                 ] ?></p>
                                 <a href="<?= $fichier["document_pdf"][
                                 	"url"
-                                ] ?>" class="btn-download" target="_blank">Télécharger</a>
+                                ] ?>" class="btn-download no-cursor" target="_blank">Télécharger</a>
                             </li>
                             <?php endforeach; ?>
                         </ul>
@@ -81,7 +81,7 @@
                                     	"url"
                                     ] ?>" download="<?= $fichier[
 	"fichier_audio"
-]["filename"] ?>" class="btn-download my-1" target="_blank">Télécharger</a>
+]["filename"] ?>" class="btn-download no-cursor my-1" target="_blank">Télécharger</a>
                                 </div>
                             </li>
                             <?php endforeach; ?>

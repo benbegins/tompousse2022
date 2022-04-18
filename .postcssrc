@@ -3,7 +3,8 @@
     "postcss-import": {},
     "tailwindcss/nesting": {},
     "tailwindcss": {},
-    "autoprefixer": {},
-    "cssnano": {}
+    "autoprefixer": {
+      "grid": true
+    },
   }
 }

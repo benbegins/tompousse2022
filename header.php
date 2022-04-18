@@ -10,7 +10,7 @@
 <body <?php body_class(); ?> >
 <?php wp_body_open(); ?>
 
-<div class="site-intro"></div>
+<?php get_template_part('./template-parts/page-transition'); ?>
 
 <div id="page" class="site-container">
 
@@ -26,7 +26,7 @@
                 <nav class="main-nav" :class="{active: menuActive}" aria-label="menu principal">
                     <p class="nav-title">Menu</p>
                     <ul>
-                        <li><button class="nav-btn nav-btn__nos-livres" @click="subMenuActive = !subMenuActive">Nos livres</button></li>
+                        <li><button class="nav-btn nav-btn__nos-livres no-cursor" @click="subMenuActive = !subMenuActive">Nos livres</button></li>
                         <li><a href="<?= get_site_url() ?>/collections">Collections</a></li>
                         <li><a href="<?= get_site_url() ?>/applications">Applications</a></li>
                         <li><a href="<?= get_site_url() ?>/blog">Blog</a></li>
@@ -112,4 +112,3 @@
     </header>
     
     <?php get_template_part("./template-parts/search-modal"); ?>
-     ?> ?> ?>

@@ -87,7 +87,7 @@
 		overflow: scroll;
 
 		transform: translateX(100%);
-		transition: transform 0.55s $ease;
+		transition: transform 0.65s $ease;
 
 		@media screen and (min-width: $lg) {
 			width: auto;

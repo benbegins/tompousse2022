@@ -1,0 +1,42 @@
+.page-transition {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+	z-index: 11;
+	pointer-events: none;
+
+	&__overlay,
+	&__intro {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		left: 0;
+		top: 0;
+	}
+
+	&__overlay {
+		background: $dark;
+		z-index: 0;
+		opacity: 0.85;
+	}
+
+	&__intro {
+		background: $light;
+		z-index: 1;
+		// box-shadow: 60px 0 120px rgba(0, 0, 0, 0.15),
+		// 	-60px 0 120px rgba(0, 0, 0, 0.15);
+	}
+
+	&__loading {
+		position: absolute;
+		left: calc(50% - 21px);
+		top: calc(50% - 45px);
+		width: 42px;
+		height: 90px;
+		z-index: 2;
+		background: url(('/src/img/icon-loading.png')) center center no-repeat;
+		background-size: 42px 90px;
+	}
+}
