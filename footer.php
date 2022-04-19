@@ -124,7 +124,7 @@
                 ) ?>, tous droits réservés. </p>
                 <div class="right">
                     <a class="link-basic btn-mentions" href="<?= get_site_url() ?>/mentions-legales">Mentions légales</a>
-                    <p>Conçu par <a href="https:bemy.studio" class="btn-bemy" target="_blank"><img class="inline-block" src="<?= get_template_directory_uri() ?>/src/img/logo-bemy.svg" alt="Logo Bemy Studio"></a></p>
+                    <p>Conçu par <a href="https://bemy.studio" class="btn-bemy" target="_blank"><img class="inline-block" src="<?= get_template_directory_uri() ?>/src/img/logo-bemy.svg" alt="Logo Bemy Studio"></a></p>
                 </div>
             </div>
         </div>
