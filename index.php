@@ -4,7 +4,8 @@
 
         <section class="section-pad">
             <div class="container">
-                <h1 class="page-title" data-reveal>Index</h1>
+                <h1 class="page-title" data-reveal><?php the_title() ?></h1>
+                <div><?php the_content() ?></div>
             </div>
         </section>
 

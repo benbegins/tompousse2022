@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-    <div class="home page-container no-bulles">
+    <div class="home page-container">
         
         <!-- HERO -->
         <section class="hero">
@@ -15,6 +15,10 @@
                         	"./template-parts/form-search"
                         ); ?></div>
                     </div>
+                </div>
+                <div class="hero__images">
+                    <div class="image left"></div>
+                    <div class="image right"></div>
                 </div>
             </div>
         </section>
