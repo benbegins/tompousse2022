@@ -60,10 +60,20 @@ const transition = () => {
 				e.preventDefault()
 				const tlOutro = gsap.timeline()
 
-				tlOutro.to(".page-transition__overlay", {
-					opacity: 0.85,
+				gsap.set(".page-transition__intro", {
+					opacity: 0,
+					scaleX: 1,
+				})
+
+				// tlOutro.to(".page-transition__overlay", {
+				// 	opacity: 0.85,
+				// 	duration: 0.5,
+				// 	ease: "linear",
+				// })
+
+				tlOutro.to(".page-transition__intro", {
+					opacity: 1,
 					duration: 0.5,
-					ease: "linear",
 				})
 
 				tlOutro.to(
@@ -73,23 +83,23 @@ const transition = () => {
 						duration: 0.5,
 						ease: "linear",
 					},
-					"-=0"
+					"-=0.25"
 				)
 
-				tlOutro.to(
-					".page-transition__intro",
-					{
-						scaleX: 1,
-						transformOrigin: "right",
-						ease: "power3.inOut",
-						duration: 1,
-					},
-					"-=1"
-				)
+				// tlOutro.to(
+				// 	".page-transition__intro",
+				// 	{
+				// 		scaleX: 1,
+				// 		transformOrigin: "right",
+				// 		ease: "power3.inOut",
+				// 		duration: 1,
+				// 	},
+				// 	"-=1"
+				// )
 
 				setTimeout(() => {
 					window.location.assign(href)
-				}, 1000)
+				}, 400)
 			}
 		})
 	})
