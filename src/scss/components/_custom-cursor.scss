@@ -1,6 +1,9 @@
 .custom-cursor {
 	--size: 30px;
 
+	// Mobile
+	display: none;
+
 	position: fixed;
 	z-index: 10;
 	top: calc(var(--size) / -2);
@@ -12,6 +15,10 @@
 	border-radius: 100%;
 	pointer-events: none;
 	transition: opacity 0.2s, width 0.2s, height 0.2s, top 0.2s, left 0.2s;
+
+	@media screen and (min-width: $lg) {
+		display: block;
+	}
 
 	&.active {
 		--size: 50px;
