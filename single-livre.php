@@ -2,7 +2,7 @@
 get_header();
 
 $couverture = get_field("couverture");
-$size = "medium";
+$size = "medium_large";
 $couleur = get_field("couleur_principale");
 ?>
 
