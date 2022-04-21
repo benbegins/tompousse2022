@@ -42,7 +42,7 @@ get_header(); ?>
     </section>
 
     <!-- PART 2 -->
-    <section class="part-2 section-pad-top">
+    <section class="part-2 section-pad">
         <div class="container">
             <div class="content-wrapper">
                 <div>
@@ -60,6 +60,40 @@ get_header(); ?>
             </div>
         </div>
     </section>
+
+    <!-- EQUIPE -->
+    <?php 
+    if( have_rows('equipe') ):
+    ?>
+    <section class="equipe">
+        <div class="container">
+            <div class="content-wrapper">
+                <div>
+                    <h2 class="page-title">L'équipe</h2>
+                </div>
+                <div class="equipe__list">
+                    <?php
+                        while( have_rows('equipe') ) : the_row();
+                    
+                            $nom = get_sub_field('nom');
+                            $fonction = get_sub_field('fonction');
+                            $description = get_sub_field('description');
+                    ?>
+
+                    <div class="equipe__item">
+                        <p class="nom"><?= $nom; ?></p>
+                        <p class="fonction"><?= $fonction; ?></p>
+                        <div class="description"><?= $description; ?></div>
+                    </div>
+                    
+                    <?php
+                        endwhile;
+                    ?>
+                </div>
+            </div>
+        </div>
+    </section>
+    <?php endif;  ?>
 
 </div>
 

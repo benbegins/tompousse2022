@@ -97,4 +97,58 @@
 			}
 		}
 	}
+
+	// EQUIPE
+	.equipe {
+		.content-wrapper {
+			border-top: $border;
+			padding-top: var(--section-padding);
+
+			@media screen and (min-width: $lg) {
+				display: grid;
+				grid-template-columns: repeat(3, 1fr);
+			}
+
+			.section-title {
+				margin-bottom: 3rem;
+			}
+		}
+
+		&__list {
+			@media screen and (min-width: $md) {
+				display: grid;
+				grid-template-columns: repeat(2, 1fr);
+				gap: calc(var(--column-spacing) * 2);
+			}
+
+			@media screen and (min-width: $lg) {
+				grid-column: span 2;
+			}
+		}
+
+		&__item {
+			@media screen and (min-width: $lg) {
+				width: 75%;
+			}
+
+			.nom {
+				@include text-lg;
+				font-family: $poppins;
+				font-weight: bold;
+				margin-top: 3rem;
+
+				@media screen and (min-width: $md) {
+					margin-top: 1rem;
+				}
+
+				@media screen and (min-width: $lg) {
+					margin-top: 0;
+				}
+			}
+			.fonction {
+				font-weight: 800;
+				margin-bottom: 1rem;
+			}
+		}
+	}
 }
