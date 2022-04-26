@@ -62,7 +62,7 @@
                     <!-- Menu secondaire -->
                     <nav class="menu-secondaire" aria-label="menu secondaire">
                         <ul>
-                            <li><a href="<?= get_site_url() ?>/applications">Applications</a></li>
+                            <!-- <li><a href="<?= get_site_url() ?>/applications">Applications</a></li> -->
                             <li><a href="<?= get_site_url() ?>/blog">Blog</a></li>
                             <li><a href="<?= get_site_url() ?>/maison-edition">À propos</a></li>
                             <li><a href="<?= get_site_url() ?>/auteurs">Nos auteurs</a></li>

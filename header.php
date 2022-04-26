@@ -38,7 +38,7 @@
                     <ul>
                         <li><button class="nav-btn nav-btn__nos-livres no-cursor" @click="subMenuActive = !subMenuActive">Nos livres</button></li>
                         <li><a href="<?= get_site_url() ?>/collections">Collections</a></li>
-                        <li><a href="<?= get_site_url() ?>/applications">Applications</a></li>
+                        <!-- <li><a href="<?= get_site_url() ?>/applications">Applications</a></li> -->
                         <li><a href="<?= get_site_url() ?>/blog">Blog</a></li>
                         <li><a href="<?= get_site_url() ?>/maison-edition">À propos</a></li>
                         <li class="search-mobile lg:hidden">
