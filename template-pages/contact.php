@@ -31,7 +31,7 @@ get_header(); ?>
                     </div>
                     <div>
                         <p><strong>Nous faire parvenir un manuscrit</strong></p>
-                        <p>Vous pouvez envoyer votre projet ou manuscrit à l’adresse suivante : edito[at]tompousse.fr. Pour tout autre demande, merci d’utiliser le formulaire de contact.</p>
+                        <p>Vous pouvez envoyer votre projet ou manuscrit à l’adresse suivante : edito[at]tompousse.fr. <br>Pour tout autre demande, merci d’utiliser le formulaire de contact.</p>
                     </div>
                 </div>
                 <div class="right">
