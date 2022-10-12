@@ -18,11 +18,14 @@
 				}
 			}
 			.map {
-				margin-top: 2rem;
+				margin: 2rem 0;
 				.img-container {
 					border-radius: $radius;
 					overflow: hidden;
 				}
+			}
+			strong {
+				font-weight: 800;
 			}
 		}
 

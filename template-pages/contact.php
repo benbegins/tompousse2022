@@ -29,6 +29,10 @@ get_header(); ?>
                             <a href="https://www.google.fr/maps/place/Editions+Tom+Pousse/@48.8352829,2.3474372,19z/data=!3m1!4b1!4m5!3m4!1s0x47e67194a5e50431:0x6c562e07f1227495!8m2!3d48.8352935!4d2.3480179" target="_blank"><img src="<?= get_template_directory_uri() ?>/src/img/map-contact.png" alt="plan"></a>
                         </div>
                     </div>
+                    <div>
+                        <p><strong>Nous faire parvenir un manuscrit</strong></p>
+                        <p>Vous pouvez envoyer votre projet ou manuscrit à l’adresse suivante : edito[at]tompousse.fr. Pour tout autre demande, merci d’utiliser le formulaire de contact.</p>
+                    </div>
                 </div>
                 <div class="right">
                     <?php

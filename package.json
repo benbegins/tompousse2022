@@ -5,7 +5,7 @@
 	"scripts": {
 		"clean": "rm -rf dist/*",
 		"build:parcel": "parcel build src/js/main.js",
-		"watch": "parcel watch src/js/main.js",
+		"dev": "parcel watch src/js/main.js",
 		"prod": "npm run clean && npm run build:parcel"
 	},
 	"author": "Bemy Studio",
