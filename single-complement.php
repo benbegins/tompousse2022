@@ -77,11 +77,6 @@
                                     <audio class="mr-4" controls src="<?= $fichier[
                                     	"fichier_audio"
                                     ]["url"] ?>"></audio>
-                                    <a href="<?= $fichier["fichier_audio"][
-                                    	"url"
-                                    ] ?>" download="<?= $fichier[
-	"fichier_audio"
-]["filename"] ?>" class="btn-download no-cursor my-1" target="_blank">Télécharger</a>
                                 </div>
                             </li>
                             <?php endforeach; ?>
