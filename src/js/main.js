@@ -7,6 +7,7 @@ import filtreThematiques from "./filtre-thematiques"
 import bulles from "./bulles"
 import parallax from "./parallax"
 import customCursor from "./custom-cursor"
+import complements from "./complements"
 
 Vue.createApp(App).mount("#page")
 
@@ -17,6 +18,7 @@ const init = () => {
 	transition()
 	parallax()
 	customCursor()
+	complements()
 }
 
 window.addEventListener("pageshow", init)

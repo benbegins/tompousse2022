@@ -8,6 +8,7 @@
                     <!-- Title -->
                     <div class="title-container" data-reveal>
                         <p class="complements">Compléments</p>
+
                         <?php $livre = get_field("livre_associe"); ?>
                         <h1 class="section-title">
                             <?php if ($livre) {
@@ -16,6 +17,15 @@
                             	the_title();
                             } ?>
                         </h1>
+
+                        <?php 
+                        $content = get_the_content();
+                        if($content):
+                        ?>
+                        <div class="description">
+                            <?= $content; ?>
+                        </div>
+                        <?php endif; ?>
 
                     </div>
                     <!-- Files -->
