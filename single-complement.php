@@ -30,86 +30,54 @@
                     </div>
                     <!-- Files -->
                     <div class="files-container">
-                        <p>Retrouvez ci-dessous la liste des compléments à télécharger.</p>
+                        <!-- <p>Retrouvez ci-dessous la liste des compléments à télécharger.</p> -->
     
                         <?php
                         $complements = get_field("complements");
 
-                        $fichiers_pdf = [];
-                        $fichiers_audio = [];
-                        $fichiers_video = [];
-
-                        // Classe chaque fichier par type
-                        foreach ($complements as $complement) {
-                        	switch ($complement["acf_fc_layout"]) {
+                        foreach($complements as $complement):
+                            switch ($complement["acf_fc_layout"]) :
                         		case "document_pdf":
-                        			$fichiers_pdf[] = $complement;
-                        			break;
-                        		case "fichier_audio":
-                        			$fichiers_audio[] = $complement;
-                        			break;
-                        		case "fichier_video":
-                        			$fichiers_video[] = $complement;
-                        			break;
-                        	}
-                        }
                         ?>
-
-
-                        <!-- DOCUMENTS PDF -->
-                        <?php if (!empty($fichiers_pdf)): ?>
-                        <h2 class="section-title">Documents PDF</h2>
-                        <ul class="documents_pdf">
-                            <?php foreach ($fichiers_pdf as $fichier): ?>
-                            <li class="mt-4">
-                                <p class="mr-4"><?= $fichier[
-                                	"nom_du_document"
-                                ] ?></p>
-                                <a href="<?= $fichier["document_pdf"][
-                                	"url"
-                                ] ?>" class="btn-download no-cursor" target="_blank">Télécharger</a>
-                            </li>
-                            <?php endforeach; ?>
-                        </ul>
-                        <?php endif; ?>
-
-
-                        <!-- FICHIERS AUDIO -->
-                        <?php if (!empty($fichiers_audio)): ?>
-                        <h2 class="section-title">Audio</h2>
-                        <ul class="fichiers_audio">
-                            <?php foreach ($fichiers_audio as $fichier): ?>
-                            <li class="mt-4">
-                                <p class="w-full"><?= $fichier[
-                                	"nom_du_fichier"
-                                ] ?></p>
-                                <div class="mt-2 audio-container">
-                                    <audio class="mr-4" controls src="<?= $fichier[
-                                    	"fichier_audio"
-                                    ]["url"] ?>"></audio>
+                                <div class="mt-4">
+                                    <p class="mr-4"><?= $complement[
+                                        "nom_du_document"
+                                    ] ?></p>
+                                    <a href="<?= $complement["document_pdf"][
+                                        "url"
+                                    ] ?>" class="btn-download no-cursor" target="_blank">Télécharger</a>
                                 </div>
-                            </li>
-                            <?php endforeach; ?>
-                        </ul>
-                        <?php endif; ?>
-                        
-                        
-                        <!-- FICHIERS VIDEO -->
-                        <?php if (!empty($fichiers_video)): ?>
-                        <h2 class="section-title">Vidéos</h2>
-                        <ul class="fichiers_audio">
-                            <?php foreach ($fichiers_video as $fichier): ?>
-                            <li class="mt-4">
-                                <a href="<?= $fichier[
-                                	"lien_video"
-                                ] ?>" class="link-arrow" target="_blank"><?= $fichier[
-	"nom_du_fichier"
-] ?></a>
-                            </li>
-                            <?php endforeach; ?>
-                        </ul>
-                        <?php endif; ?>
-
+                        <?php
+                        			break;
+                                case "fichier_audio":
+                        ?>
+                                <div class="mt-4">
+                                    <p class="w-full"><?= $complement[
+                                        "nom_du_fichier"
+                                    ] ?></p>
+                                    <div class="mt-2 audio-container">
+                                        <audio class="mr-4" controls src="<?= $complement[
+                                            "fichier_audio"
+                                        ]["url"] ?>"></audio>
+                                    </div>
+                                </div>
+                        <?php
+                                    break;
+                                case "fichier_video":
+                        ?>
+                                <div class="mt-4">
+                                    <a href="<?= $complement["lien_video"] ?>" class="link-arrow" target="_blank"><?= $complement["nom_du_fichier"]?></a>
+                                </div>
+                        <?php
+                                    break;
+                                case "zone_de_texte":
+                        ?>
+                                <h2 class="section-title"><?= $complement['texte']; ?></h2>
+                        <?php
+                                    break;
+                            endswitch;
+                        endforeach;
+                        ?>
 
                         <!-- TOUT TELECHARGER -->
                         <?php 
