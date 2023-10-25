@@ -66,7 +66,6 @@
                                 case "fichier_video":
                         ?>
                                 <div class="mt-4">
-                                    <p class="mb-2"><?= $complement['nom_du_fichier'] ?></p>
                                     <div class="embed-container"><?= $complement["lien_video"] ?></div>
                                 </div>
                         <?php
