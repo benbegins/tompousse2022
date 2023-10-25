@@ -56,7 +56,7 @@
                                         "nom_du_fichier"
                                     ] ?></p>
                                     <div class="mt-2 audio-container">
-                                        <audio class="mr-4" controls src="<?= $complement[
+                                        <audio class="mr-4" controls controlsList="nodownload" src="<?= $complement[
                                             "fichier_audio"
                                         ]["url"] ?>"></audio>
                                     </div>
@@ -66,7 +66,8 @@
                                 case "fichier_video":
                         ?>
                                 <div class="mt-4">
-                                    <a href="<?= $complement["lien_video"] ?>" class="link-arrow" target="_blank"><?= $complement["nom_du_fichier"]?></a>
+                                    <p class="mb-2"><?= $complement['nom_du_fichier'] ?></p>
+                                    <?= $complement["lien_video"] ?>
                                 </div>
                         <?php
                                     break;
