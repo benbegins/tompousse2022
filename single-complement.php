@@ -28,8 +28,11 @@
                         <?php endif; ?>
 
                     </div>
+                    <?php if (post_password_required()): ?>
+                    <?php else: ?>
                     <!-- Files -->
                     <div class="files-container">
+                    
                         <!-- <p>Retrouvez ci-dessous la liste des compléments à télécharger.</p> -->
     
                         <?php
@@ -86,8 +89,9 @@
                         ?>
                         <a href="<?= $tout_telecharger['url'] ?>" download="<?= $tout_telecharger['name'] ?>" target="_blank" class="btn-primary mt-16">Télécharger tous les documents</a>
                         <?php endif; ?>
-
+                    
                     </div>
+                    <?php endif; ?>
                 </div>
 
                 <div class="right">
