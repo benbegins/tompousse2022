@@ -89,10 +89,12 @@ $couleur = get_field("couleur_principale");
             <div class="container">
                 <?php
                 $article = get_field("article_de_blog");
-                $image = get_the_post_thumbnail($article->ID, "medium");
-                $link = get_post_permalink($article->ID);
 
-                if ($article): ?>
+                if ($article): 
+
+                    $image = get_the_post_thumbnail($article->ID, "medium");
+                    $link = get_post_permalink($article->ID);
+                ?>
                 <!-- BLOG -->
                 <div class="article-blog">
                     <div class="onenparle">
