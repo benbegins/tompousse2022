@@ -59,10 +59,10 @@
                 	"posts_per_page" => "3",
                 	"post__not_in" => [$post->ID],
                 	"tax_query" => [
-                		[
-                			"taxonomy" => "category",
-                			"field" => "slug",
-                			"terms" => $categories[0]->slug,
+                        [
+                            "taxonomy" => "category",
+                            "field" => "slug",
+                            "terms" => isset($categories[0]) ? $categories[0]->slug : '',
                 		],
                 	],
                 ];
