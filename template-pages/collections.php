@@ -22,7 +22,7 @@ get_header(); ?>
         ];
         $collections = get_terms($args);
 
-        if (!$collections->errors):
+        if ($collections && !is_wp_error($collections)):
         	foreach ($collections as $collection):
 
         		$name = $collection->name;
