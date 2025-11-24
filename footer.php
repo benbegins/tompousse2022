@@ -72,7 +72,7 @@
                 </div>
                 <div class="part-2">
                     <div class="adress-reseaux__container">
-                        <div class="adress"><p>33 boulevard Arago <br>75013 PARIS<br>01 44 49 75 00</p></div>
+                        <div class="adress"><p>15 boulevard Bourdon <br>75004 PARIS</p></div>
 
                         <?php
                         $instagram = get_field("instagram", "option");

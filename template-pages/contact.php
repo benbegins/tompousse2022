@@ -19,9 +19,8 @@ get_header(); ?>
                     <div class="adress">
                         <h2 class="section-title">Adresse</h2>
                         <p>
-                            33 boulevard Arago<br>
-                            75013 PARIS<br>
-                            01 44 49 75 00
+                            15 boulevard Bourdon<br>
+                            75004 PARIS<br>
                         </p>
                     </div>
                     <div class="map">
@@ -31,7 +30,7 @@ get_header(); ?>
                     </div>
                     <div>
                         <p><strong>Nous faire parvenir un manuscrit</strong></p>
-                        <p>Vous pouvez envoyer votre projet ou manuscrit à l’adresse suivante : edito[at]tompousse.fr. <br>Pour tout autre demande, merci d’utiliser le formulaire de contact.</p>
+                        <p>Vous pouvez envoyer votre projet ou manuscrit à l’adresse suivante : edito[at]tompousse.fr. <br>Pour la collection AdoDys, merci de nous envoyer un synopsis détaillé de 3-4 pages minimum et une présentation des personnages. <br><br>Pour tout autre demande, merci d’utiliser le formulaire de contact.</p>
                     </div>
                 </div>
                 <div class="right">
