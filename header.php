@@ -101,11 +101,6 @@
                     </a>
                 </li>
                 <li>
-                    <a href="<?= $twitter ?>" target="_blank">
-                        <img src="<?= get_template_directory_uri() ?>/src/img/icon-twitter.svg" alt="twitter">
-                    </a>
-                </li>
-                <li>
                     <a href="<?= $linkedin ?>" target="_blank">
                         <img src="<?= get_template_directory_uri() ?>/src/img/icon-linkedin.svg" alt="linkedin">
                     </a>
